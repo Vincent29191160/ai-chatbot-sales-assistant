@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Lead Automation Demo</title>
+</head>
+<body style="font-family: Arial; padding: 40px;">
+
+<h1>AI Lead Automation System</h1>
+
+<p>Live demo of lead capture + automation workflow</p>
+
+<input id="name" placeholder="Enter name" />
+<input id="email" placeholder="Enter email" />
+
+<button onclick="captureLead()">Submit Lead</button>
+
+<pre id="output"></pre>
+
+<script>
+function captureLead() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    let result = {
+        name: name,
+        email: email,
+        status: "captured",
+        timestamp: new Date()
+    };
+
+    document.getElementById("output").innerText =
+        "Lead Captured:\n" + JSON.stringify(result, null, 2);
+}
+</script>
+
+</body>
+</html>
